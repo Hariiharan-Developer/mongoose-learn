@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
-const config =require('./config/.env')
-mongoose.connect(CLOUD_CON)
+
+require('dotenv').config({ path: './config/.env' });
+
+
+mongoose.connect(process.env.CLOUD_CON)
 .then(()=>{
     console.log('Database Connected')
 })
